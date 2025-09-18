@@ -2,50 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>🌸 Bestie Request 💖</title>
+  <title>🌿 Bestie Request 🤍</title>
   <style>
     body {
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      color: #fff;
+      background: #f8fdf9;
+      font-family: "Poppins", sans-serif;
+      color: #2e3d2f;
       text-align: center;
       padding: 50px;
     }
     h1 {
       font-size: 3em;
-      color: #fff0f6;
-      text-shadow: 2px 2px 5px #ff4da6;
+      color: #2e3d2f;
     }
     .card {
-      background: rgba(255, 255, 255, 0.2);
+      background: #ffffff;
+      border: 2px solid #c9e2c7;
       border-radius: 20px;
-      padding: 20px;
+      padding: 30px;
       max-width: 600px;
       margin: auto;
-      box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+      box-shadow: 0px 5px 20px rgba(0,0,0,0.05);
     }
     .question {
       font-size: 1.5em;
       margin: 20px 0;
     }
-    .status {
+    .buttons {
+      margin: 20px 0;
+    }
+    button {
       font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .yes {
+      background: #9dbf9e;
+      color: #fff;
+    }
+    .yes:hover {
+      background: #7ea77f;
+    }
+    .no {
+      background: #e6e6e6;
+      color: #2e3d2f;
+    }
+    .no:hover {
+      background: #cccccc;
+    }
+    .status {
+      font-size: 1.4em;
       margin-top: 30px;
-      color: #ffe6f0;
+      color: #4a5f4d;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>🌸 Bestieeeeee 💖</h1>
+  <h1>🌿 Bestieeeeee 🤍</h1>
 
   <div class="card">
     <p class="question">
-      🌸💖 Hey YOU! 💖🌸<br>
-      I’ve got one magical question for you… ✨🌷🌈<br>
-      💫 Will you be my <b>Best Friend Forever?</b> 💫
+      🌸 Hey YOU! 🤍<br>
+      I’ve got one magical question for you… ✨<br>
+      🌱 Will you be my <b>Best Friend Forever?</b> 🌱
     </p>
 
-    <p class="status">🌸👯‍♀️ Status: <b>BESTIES FOREVER</b> 👯‍♀️🌸</p>
+    <div class="buttons">
+      <button class="yes" onclick="setStatus('yes')">💖 YES 💖</button>
+      <button class="no" onclick="setStatus('no')">💔 NO 💔</button>
+    </div>
+
+    <p id="status" class="status">💭 Waiting for your answer...</p>
   </div>
+
+  <script>
+    function setStatus(answer) {
+      let status = document.getElementById("status");
+      if (answer === "yes") {
+        status.innerHTML = "🌿👯‍♀️ Status: BESTIES FOREVER 👯‍♀️🌿";
+        document.body.style.background = "#eaf3ea";
+      } else {
+        status.innerHTML = "😅💔 Status: Still hoping... 💔😅";
+        document.body.style.background = "#fdf3f3";
+      }
+    }
+  </script>
 </body>
 </html>
