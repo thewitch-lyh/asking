@@ -10,6 +10,7 @@
       color: #2e3d2f;
       text-align: center;
       padding: 50px;
+      overflow-x: hidden;
     }
     h1 {
       font-size: 3em;
@@ -80,14 +81,29 @@
     <p id="status" class="status">💭 Waiting for your answer...</p>
   </div>
 
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
     function setStatus(answer) {
       let status = document.getElementById("status");
       if (answer === "yes") {
-        status.innerHTML = "🌿👯‍♀️ Status: BESTIES FOREVER 👯‍♀️🌿";
+        status.innerHTML = "🌿👯‍♀️ Status: BESTIES 👯‍♀️🌿";
         document.body.style.background = "#eaf3ea";
+
+        // 🎉 Confetti celebration
+        confetti({
+          particleCount: 200,
+          spread: 100,
+          origin: { y: 0.6 }
+        });
+
+        // Extra bursts ✨
+        setTimeout(() => {
+          confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+        }, 500);
+
       } else {
-        status.innerHTML = "😅💔 Status: Still hoping... 💔😅";
+        status.innerHTML = "DARE TO SAY NO?;
         document.body.style.background = "#fdf3f3";
       }
     }
